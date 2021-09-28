@@ -10,8 +10,14 @@ const Stack = createNativeStackNavigator();
 const App = () => {
   return (
     <NavigationContainer theme={DarkTheme}>
-      <Stack.Navigator>
-        <Stack.Screen name="Latest" component={Latest} />
+      <Stack.Navigator
+        screenOptions={{
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+          headerShadowVisible: false,
+        }}>
+        <Stack.Screen name="Latest Update" component={Latest} />
       </Stack.Navigator>
     </NavigationContainer>
   );
