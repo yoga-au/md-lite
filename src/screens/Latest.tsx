@@ -9,19 +9,23 @@ const Latest = () => {
   const DUMMY_DATA = [
     {
       id: '1',
-      text: 'Text One',
+      title: 'Lorem Ipsum sit dolor amet Lorem Ipsum sit dolor amet',
+      timestamp: 'Text One',
     },
     {
       id: '2',
-      text: 'Text Two',
+      title: 'Title One',
+      timestamp: 'Text Two',
     },
     {
       id: '3',
-      text: 'Text Three',
+      title: 'Lorem Ipsum sit dolor amet',
+      timestamp: 'Text Three',
     },
     {
       id: '4',
-      text: 'Text Four',
+      title: 'Lorem Ipsum sit dolor amet Lorem Ipsum sit dolor amet',
+      timestamp: 'Text Four',
     },
   ];
 
@@ -29,7 +33,9 @@ const Latest = () => {
     <SafeAreaView style={styles.container}>
       <FlatList
         data={DUMMY_DATA}
-        renderItem={({item}) => <SingleCard text={item.text} />}
+        renderItem={({item}) => (
+          <SingleCard timestamp={item.timestamp} title={item.title} />
+        )}
         keyExtractor={item => item.id}
         numColumns={2}
         contentContainerStyle={styles.flatListContainer}

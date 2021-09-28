@@ -12,10 +12,11 @@ const App = () => {
     <NavigationContainer theme={DarkTheme}>
       <Stack.Navigator
         screenOptions={{
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
+          // headerTitleStyle: {
+          //   fontWeight: 'bold',
+          // },
           headerShadowVisible: false,
+          headerTitleAlign: 'center',
         }}>
         <Stack.Screen name="Latest Update" component={Latest} />
       </Stack.Navigator>
