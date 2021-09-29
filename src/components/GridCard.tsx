@@ -4,7 +4,7 @@ import {View, Text, StyleSheet} from 'react-native';
 // type import
 import type {SingleCardProps} from '../types/interfaces';
 
-const SingleCard = ({title, timestamp}: SingleCardProps) => {
+const GridCard = ({title, timestamp}: SingleCardProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.dummyCover} />
@@ -29,9 +29,6 @@ const styles = StyleSheet.create({
     padding: 16,
     backgroundColor: '#121212',
     borderRadius: 8,
-    // border for development
-    // borderColor: 'red',
-    // borderWidth: 1,
   },
   dummyCover: {
     backgroundColor: 'white',
@@ -39,13 +36,13 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     justifyContent: 'space-between',
-    height: 120,
+    height: 115,
     marginTop: 8,
   },
   title: {
     fontWeight: '700',
     fontSize: 18,
-    color: 'hsl(0, 0%, 90%)',
+    color: 'hsl(0, 0%, 80%)',
     marginTop: 8,
     lineHeight: 24,
   },
@@ -65,4 +62,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SingleCard;
+export default GridCard;

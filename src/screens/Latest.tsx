@@ -3,7 +3,7 @@ import {StyleSheet, FlatList} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 // component import
-import SingleCard from '../components/SingleCard';
+import GridCard from '../components/GridCard';
 
 const Latest = () => {
   const DUMMY_DATA = [
@@ -34,7 +34,7 @@ const Latest = () => {
       <FlatList
         data={DUMMY_DATA}
         renderItem={({item}) => (
-          <SingleCard timestamp={item.timestamp} title={item.title} />
+          <GridCard timestamp={item.timestamp} title={item.title} />
         )}
         keyExtractor={item => item.id}
         numColumns={2}
