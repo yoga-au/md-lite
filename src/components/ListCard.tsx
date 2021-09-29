@@ -4,18 +4,15 @@ import {View, Text, StyleSheet} from 'react-native';
 // type import
 import type {SingleCardProps} from '../types/interfaces';
 
-const GridCard = ({title, timestamp}: SingleCardProps) => {
+const ListCard = ({title, timestamp}: SingleCardProps) => {
   return (
     <View style={styles.container}>
-      <View style={styles.dummyCover} />
-      <View style={styles.textContainer}>
-        <Text style={styles.title} numberOfLines={3}>
-          {title}
-        </Text>
-        <View style={styles.timestampContainer}>
-          <Text style={styles.timestamp}>{timestamp}</Text>
-          <View style={styles.flagDummy} />
-        </View>
+      <Text style={styles.title} numberOfLines={4}>
+        {title}
+      </Text>
+      <View style={styles.timestampContainer}>
+        <Text style={styles.timestamp}>{timestamp}</Text>
+        <View style={styles.flagDummy} />
       </View>
     </View>
   );
@@ -30,17 +27,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#121212',
     borderRadius: 8,
   },
-  dummyCover: {
-    backgroundColor: 'white',
-    aspectRatio: 12 / 16,
-  },
-  textContainer: {
-    justifyContent: 'space-between',
-    height: 120,
-    marginTop: 16,
-    // borderColor: 'red',
-    // borderWidth: 1,
-  },
   title: {
     fontWeight: '700',
     fontSize: 18,
@@ -48,7 +34,7 @@ const styles = StyleSheet.create({
     lineHeight: 24,
   },
   timestampContainer: {
-    marginTop: 10,
+    marginTop: 12,
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
@@ -59,8 +45,9 @@ const styles = StyleSheet.create({
   flagDummy: {
     width: 24,
     height: '100%',
+    marginRight: 8,
     backgroundColor: 'white',
   },
 });
 
-export default GridCard;
+export default ListCard;
