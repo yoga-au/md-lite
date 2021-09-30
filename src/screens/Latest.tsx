@@ -1,12 +1,16 @@
-import React, {useState} from 'react';
-import {StyleSheet, FlatList, Button} from 'react-native';
+import React, {useState, useLayoutEffect, useCallback} from 'react';
+import {StyleSheet, FlatList} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import FeatherIcon from 'react-native-vector-icons/Feather';
+
+// custom type import
+import type {ScreenProps} from '../types';
 
 // component import
 import GridCard from '../components/GridCard';
 import ListCard from '../components/ListCard';
 
-const Latest = () => {
+const Latest = ({navigation}: ScreenProps) => {
   // state definition
   const [isListView, setIsListView] = useState(false);
 
@@ -33,19 +37,41 @@ const Latest = () => {
     },
   ];
 
-  const handleChangeView = () => {
+  const handleChangeView = useCallback(() => {
     setIsListView(!isListView);
     console.log(isListView);
-  };
+  }, [isListView]);
 
   const columnsNum = isListView ? 1 : 2;
 
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => {
+        if (isListView) {
+          return (
+            <FeatherIcon
+              name="list"
+              size={24}
+              color="hsl(0, 0%, 80%)"
+              onPress={() => handleChangeView()}
+            />
+          );
+        }
+
+        return (
+          <FeatherIcon
+            name="grid"
+            size={24}
+            color="hsl(0, 0%, 80%)"
+            onPress={() => handleChangeView()}
+          />
+        );
+      },
+    });
+  }, [navigation, isListView, handleChangeView]);
+
   return (
     <SafeAreaView style={styles.container}>
-      <Button
-        title={isListView ? 'List' : 'Grid'}
-        onPress={() => handleChangeView()}
-      />
       <FlatList
         data={DUMMY_DATA}
         renderItem={({item}) => {

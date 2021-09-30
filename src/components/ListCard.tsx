@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
 // type import
-import type {SingleCardProps} from '../types/interfaces';
+import type {SingleCardProps} from '../types';
 
 const ListCard = ({title, timestamp}: SingleCardProps) => {
   return (
