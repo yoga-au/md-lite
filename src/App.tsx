@@ -1,27 +1,8 @@
 import React from 'react';
-import {NavigationContainer, DarkTheme} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
-// screens import
-import Latest from './screens/Latest';
-
-const Stack = createNativeStackNavigator();
+import Navigation from './navigation/Navigation';
 
 const App = () => {
-  return (
-    <NavigationContainer theme={DarkTheme}>
-      <Stack.Navigator
-        screenOptions={{
-          // headerTitleStyle: {
-          //   fontWeight: 'bold',
-          // },
-          headerShadowVisible: false,
-          headerTitleAlign: 'center',
-        }}>
-        <Stack.Screen name="Latest Update" component={Latest} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+  return <Navigation />;
 };
 
 export default App;
