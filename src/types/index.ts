@@ -1,4 +1,4 @@
-import type {SingleCardProps} from './interfaces/singleCardProps';
-import type {ScreenProps} from './screenProps';
+import type {SingleCardProps} from './SingleCardProps';
+import type {ScreenProps} from './ScreenProps';
 
 export type {SingleCardProps, ScreenProps};

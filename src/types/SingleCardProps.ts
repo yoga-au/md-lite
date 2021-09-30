@@ -1,4 +1,4 @@
-export interface SingleCardProps {
+export type SingleCardProps = {
   title: string;
   timestamp: string;
-}
+};
