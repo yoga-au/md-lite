@@ -24,8 +24,8 @@ const GridCard = ({title, timestamp}: SingleCardProps) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 36,
-    marginHorizontal: 16,
+    marginTop: 16,
+    marginHorizontal: 8,
     padding: 16,
     backgroundColor: '#121212',
     borderRadius: 8,

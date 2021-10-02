@@ -21,7 +21,7 @@ const ListCard = ({title, timestamp}: SingleCardProps) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 36,
+    marginTop: 20,
     marginHorizontal: 16,
     padding: 16,
     backgroundColor: '#121212',

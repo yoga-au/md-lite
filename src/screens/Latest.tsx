@@ -39,7 +39,6 @@ const Latest = ({navigation}: ScreenProps) => {
 
   const handleChangeView = useCallback(() => {
     setIsListView(!isListView);
-    console.log(isListView);
   }, [isListView]);
 
   const columnsNum = isListView ? 1 : 2;
@@ -50,7 +49,7 @@ const Latest = ({navigation}: ScreenProps) => {
         if (isListView) {
           return (
             <FeatherIcon
-              name="list"
+              name="grid"
               size={24}
               color="hsl(0, 0%, 80%)"
               onPress={() => handleChangeView()}
@@ -60,7 +59,7 @@ const Latest = ({navigation}: ScreenProps) => {
 
         return (
           <FeatherIcon
-            name="grid"
+            name="list"
             size={24}
             color="hsl(0, 0%, 80%)"
             onPress={() => handleChangeView()}

@@ -9,7 +9,7 @@ import Latest from '../screens/Latest';
 
 const NativeStack = createNativeStackNavigator();
 
-const Navigation = () => {
+const Navigation: React.FC = ({children}) => {
   return (
     <NavigationContainer theme={DarkTheme}>
       <NativeStack.Navigator
@@ -26,6 +26,7 @@ const Navigation = () => {
         }}>
         <NativeStack.Screen name="Latest Update" component={Latest} />
       </NativeStack.Navigator>
+      {children}
     </NavigationContainer>
   );
 };
