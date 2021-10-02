@@ -34,6 +34,7 @@ const Navigation: React.FC = ({children}) => {
 const styles = StyleSheet.create({
   navIcon: {
     marginRight: 16,
+    color: 'orange',
   },
 });
 

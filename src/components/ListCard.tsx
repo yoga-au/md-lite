@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import FastImage from 'react-native-fast-image';
 
 // type import
 import type {SingleCardProps} from '../types';
@@ -12,7 +13,10 @@ const ListCard = ({title, timestamp}: SingleCardProps) => {
       </Text>
       <View style={styles.timestampContainer}>
         <Text style={styles.timestamp}>{timestamp}</Text>
-        <View style={styles.flagDummy} />
+        <FastImage
+          style={styles.flag}
+          source={{uri: 'https://www.countryflags.io/gb/shiny/64.png'}}
+        />
       </View>
     </View>
   );
@@ -42,11 +46,10 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: 'hsl(0, 0%, 80%)',
   },
-  flagDummy: {
+  flag: {
     width: 24,
     height: '100%',
     marginRight: 8,
-    backgroundColor: 'white',
   },
 });
 

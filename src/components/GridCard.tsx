@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import FastImage from 'react-native-fast-image';
 
 // type import
 import type {SingleCardProps} from '../types';
@@ -7,14 +8,20 @@ import type {SingleCardProps} from '../types';
 const GridCard = ({title, timestamp}: SingleCardProps) => {
   return (
     <View style={styles.container}>
-      <View style={styles.dummyCover} />
+      <FastImage
+        style={styles.cover}
+        source={{uri: 'https://picsum.photos/800'}}
+      />
       <View style={styles.textContainer}>
         <Text style={styles.title} numberOfLines={3}>
           {title}
         </Text>
         <View style={styles.timestampContainer}>
           <Text style={styles.timestamp}>{timestamp}</Text>
-          <View style={styles.flagDummy} />
+          <FastImage
+            style={styles.flag}
+            source={{uri: 'https://www.countryflags.io/gb/shiny/64.png'}}
+          />
         </View>
       </View>
     </View>
@@ -30,7 +37,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#121212',
     borderRadius: 8,
   },
-  dummyCover: {
+  cover: {
     backgroundColor: 'white',
     aspectRatio: 12 / 16,
   },
@@ -38,8 +45,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     height: 120,
     marginTop: 16,
-    // borderColor: 'red',
-    // borderWidth: 1,
   },
   title: {
     fontWeight: '700',
@@ -56,10 +61,9 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: 'hsl(0, 0%, 80%)',
   },
-  flagDummy: {
+  flag: {
     width: 24,
     height: '100%',
-    backgroundColor: 'white',
   },
 });
 
