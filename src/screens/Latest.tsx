@@ -2,6 +2,8 @@ import React, {useState, useLayoutEffect, useCallback} from 'react';
 import {StyleSheet, FlatList} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import FeatherIcon from 'react-native-vector-icons/Feather';
+import {useQuery} from 'react-query';
+import pingServer from '../fetcher/pingServer';
 
 // custom type import
 import type {ScreenProps} from '../types';
@@ -13,6 +15,7 @@ import ListCard from '../components/ListCard';
 const Latest = ({navigation}: ScreenProps) => {
   // state definition
   const [isListView, setIsListView] = useState(false);
+  const {isSuccess, data} = useQuery('ping', pingServer);
 
   const DUMMY_DATA = [
     {
@@ -68,6 +71,10 @@ const Latest = ({navigation}: ScreenProps) => {
       },
     });
   }, [navigation, isListView, handleChangeView]);
+
+  if (isSuccess) {
+    console.log(data);
+  }
 
   return (
     <SafeAreaView style={styles.container}>
